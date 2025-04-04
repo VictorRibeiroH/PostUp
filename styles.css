@@ -1,0 +1,128 @@
+/* Estilos para o documento de cronograma */
+
+.document {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 21cm;
+  margin: 0 auto;
+  padding: 2cm;
+  color: #333;
+  line-height: 1.5;
+}
+
+.cover {
+  text-align: center;
+  margin-bottom: 3cm;
+  padding-top: 4cm;
+}
+
+.cover h1 {
+  font-size: 28px;
+  color: #ff6400;
+  margin-bottom: 0.5cm;
+  text-transform: uppercase;
+}
+
+.cover h2 {
+  font-size: 22px;
+  margin-bottom: 2cm;
+}
+
+.project-details {
+  margin-top: 2cm;
+  text-align: left;
+  max-width: 12cm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-details p {
+  margin: 0.3cm 0;
+}
+
+.introduction,
+.conclusion {
+  margin: 1cm 0;
+  text-align: justify;
+}
+
+h2 {
+  color: #ff6400;
+  font-size: 18px;
+  margin-top: 1.5cm;
+  margin-bottom: 0.5cm;
+  border-bottom: 1px solid #ff6400;
+  padding-bottom: 0.2cm;
+}
+
+.timeline {
+  margin: 1cm 0;
+}
+
+.time-block {
+  margin-bottom: 1cm;
+  padding: 0.5cm;
+  border-left: 3px solid #ff6400;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.time-block.empty {
+  border-left: 3px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.time-block h3 {
+  color: #ff6400;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.3cm;
+}
+
+.time-block.empty h3 {
+  color: #888;
+}
+
+.activities,
+.deliverables {
+  margin-bottom: 0.5cm;
+}
+
+h4 {
+  font-size: 14px;
+  margin-bottom: 0.2cm;
+  color: #555;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0.5cm;
+}
+
+li {
+  margin-bottom: 0.1cm;
+}
+
+ul ul {
+  margin-top: 0.1cm;
+  margin-bottom: 0.2cm;
+}
+
+.signature {
+  margin-top: 3cm;
+  text-align: center;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0.5cm 0;
+}
+
+.logo-placeholder {
+  margin-top: 1cm;
+  padding: 1cm;
+  border: 1px dashed #ccc;
+  text-align: center;
+  color: #888;
+}
+
