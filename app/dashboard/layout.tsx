@@ -18,9 +18,11 @@ export default async function DashboardLayout({
   // Buscar assinatura do usuário
   const subscription = await getUserSubscription(user.id)
 
+  // Garantir que userData tenha todas as propriedades necessárias
   const userData = {
-    ...user,
-    subscription,
+    name: user.name,
+    email: user.email,
+    subscription: subscription || { plan_id: 1 }, // Fornecer um valor padrão se subscription for null
   }
 
   return (
