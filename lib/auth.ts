@@ -1,6 +1,6 @@
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
-import { db } from "./db"
+import { neon } from "@neondatabase/serverless"
 import bcrypt from "bcryptjs"
 
 // Função para verificar a senha
@@ -66,8 +66,9 @@ export async function checkSubscriptionAccess(requiredFeatures: string[]) {
 // Usuários
 export async function getUserByEmail(email: string) {
   try {
-    const result = await db.execute("SELECT * FROM users WHERE email = $1 LIMIT 1", [email])
-    return result.rows[0]
+    const sql = neon(process.env.DATABASE_URL!)
+    const result = await sql`SELECT * FROM users WHERE email = ${email} LIMIT 1`
+    return result[0]
   } catch (error) {
     console.error("Database query error:", error)
     throw error
@@ -76,8 +77,9 @@ export async function getUserByEmail(email: string) {
 
 export async function getUserById(id: number) {
   try {
-    const result = await db.execute("SELECT * FROM users WHERE id = $1 LIMIT 1", [id])
-    return result.rows[0]
+    const sql = neon(process.env.DATABASE_URL!)
+    const result = await sql`SELECT * FROM users WHERE id = ${id} LIMIT 1`
+    return result[0]
   } catch (error) {
     console.error("Database query error:", error)
     throw error
