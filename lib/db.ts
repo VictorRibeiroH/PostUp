@@ -14,7 +14,7 @@ if (!process.env.DATABASE_URL) {
 
 // Inicializa o cliente SQL
 console.log("Conectando ao banco de dados com URL:", process.env.DATABASE_URL.substring(0, 30) + "...")
-const sql = neon(process.env.DATABASE_URL!)
+const sql = neon(process.env.DATABASE_URL)
 
 // Inicializa o cliente Drizzle
 export const db = drizzle(sql)
@@ -24,15 +24,7 @@ export async function query(sqlQuery: string, params: any[] = []) {
   console.log("Executando query:", sqlQuery, "com parâmetros:", params)
   try {
     // Usar sql tagged template literal em vez de db.execute
-    // Construir a query dinamicamente
-    const queryText = sqlQuery
-
-    // Substituir manualmente os parâmetros posicionais ($1, $2, etc.) por ?
-    // e então usar o método sql do neon
-    const paramPlaceholders = params.map((_, i) => `$${i + 1}`)
-
-    // Executar a query usando o cliente sql diretamente
-    const result = await sql.query(queryText, params)
+    const result = await sql.query(sqlQuery, params)
 
     console.log("Resultado da query:", result)
     return {
@@ -50,7 +42,6 @@ export async function query(sqlQuery: string, params: any[] = []) {
 // Usuários
 export async function getUserByEmail(email: string) {
   try {
-    // Usar sql diretamente em vez de db.execute
     const result = await sql`SELECT * FROM users WHERE email = ${email} LIMIT 1`
     return result[0]
   } catch (error) {

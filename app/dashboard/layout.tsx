@@ -20,9 +20,11 @@ export default async function DashboardLayout({
 
   // Garantir que userData tenha todas as propriedades necessárias
   const userData = {
-    name: user.name,
-    email: user.email,
-    subscription: subscription || { plan_id: 1 }, // Fornecer um valor padrão se subscription for null
+    name: user.name as string,
+    email: user.email as string,
+    subscription: {
+      plan_id: (subscription?.plan_id as number) || 1,
+    },
   }
 
   return (
