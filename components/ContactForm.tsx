@@ -11,7 +11,7 @@ import { Modal } from "./ui/modal";
 import { Loader2 } from "lucide-react";
 
 // Seu número de WhatsApp
-const WHATSAPP_NUMBER = "5541988957399";
+const WHATSAPP_NUMBER = "554792876899";
 
 const segments = [
   "Alimentação",

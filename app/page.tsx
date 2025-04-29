@@ -13,18 +13,8 @@ export default function Home() {
           {/* Lado esquerdo - Texto */}
           <div className="flex-1 space-y-6">
             <h1 className="text-5xl font-bold leading-tight">
-              Utilize o poder dos dados para{" "}
-              <span className="block">
-                alavancar suas{" "}
-                <span className="text-primary">
-                  vendas pelo WhatsApp!
-                </span>
-              </span>
+              Seja <span className="text-primary">Você</span> sua <span className="text-primary">Agência de Marketing Digital</span>
             </h1>
-            
-            <p className="text-xl text-gray-600">
-              Rastreie suas conversas e acesse insights valiosos para otimizar suas campanhas.
-            </p>
           </div>
 
           {/* Lado direito - Formulário */}

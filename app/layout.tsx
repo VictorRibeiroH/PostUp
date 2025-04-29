@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "PostUp - Agência de Marketing Digital",
   description: "Plataforma de gestão de conteúdo e marketing digital",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -30,7 +30,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
