@@ -3,6 +3,7 @@ import { redirect } from "next/navigation"
 import { DashboardSidebar } from "@/components/dashboard-sidebar"
 import { requireAuth } from "@/lib/auth"
 import { getUserSubscription } from "@/lib/db"
+import { Toaster } from "sonner"
 
 export default async function DashboardLayout({
   children,
@@ -33,6 +34,7 @@ export default async function DashboardLayout({
         <DashboardSidebar user={userData} />
         <main className="flex-1 overflow-y-auto">{children}</main>
       </div>
+      <Toaster richColors />
     </div>
   )
 }
